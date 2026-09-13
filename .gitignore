@@ -1,0 +1,12 @@
+# orbis-3d/.gitignore
+capture/*
+!capture/.gitkeep
+processing/*
+!processing/.gitkeep
+*.mp4
+*.mov
+__pycache__/
+*.pyc
+.venv/
+venv/
+outputs/

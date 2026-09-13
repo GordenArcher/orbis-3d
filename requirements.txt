@@ -1,0 +1,6 @@
+# orbis-3d/requirements.txt
+# Core pipeline dependency — installs COLMAP integration, splatfacto, and viewer
+nerfstudio
+
+# Frame extraction from capture video
+ffmpeg-python
