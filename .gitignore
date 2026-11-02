@@ -10,3 +10,14 @@ __pycache__/
 .venv/
 venv/
 outputs/
+
+# Python build and tooling artifacts. Editable installs leave egg-info behind,
+# and a stale one is enough to make pip resolve the wrong package.
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+
+# Colab leaves checkpoints next to notebooks when a session is saved.
+.ipynb_checkpoints/
+**/.ipynb_checkpoints/

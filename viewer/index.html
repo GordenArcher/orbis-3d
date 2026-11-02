@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>orbis-3d viewer</title>
+    <link rel="stylesheet" href="./viewer.css" />
+  </head>
+  <body>
+    <div id="viewport"></div>
+
+    <div id="hud">
+      <div class="title">orbis-3d</div>
+      <div id="status">Starting viewer...</div>
+    </div>
+
+    <label id="picker">
+      <input id="file" type="file" accept=".ply,.splat,.ksplat,.spz" />
+      Open a splat file
+    </label>
+
+    <div id="drop">Drop a .ply, .splat, .ksplat, or .spz file</div>
+
+    <!--
+      The splat library imports "three" as a bare specifier. An import map is the
+      no-build way to point that at a CDN, so this page works from a static host
+      or a shared zip without npm or a bundler.
+    -->
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js"
+        }
+      }
+    </script>
+    <script type="module" src="./viewer.js"></script>
+  </body>
+</html>

@@ -1,6 +1,10 @@
 # orbis-3d/requirements.txt
-# Core pipeline dependency — installs COLMAP integration, splatfacto, and viewer
-nerfstudio
+# GPU host only. Installing this on the recording machine will try to build the
+# full Nerfstudio/torch stack, which is both large and CUDA specific.
+#
+# Pinned because splatfacto, gsplat, tinycudann, and torch versions interact.
+# Bumping this without revalidating the Colab runtime is how CUDA gets broken.
+nerfstudio==1.1.5
 
-# Frame extraction from capture video
-ffmpeg-python
+# ffmpeg is a system binary, not a Python package. ns-process-data shells out to
+# it for frame extraction. Install it with brew, apt, or the Colab setup script.

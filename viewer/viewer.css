@@ -1,0 +1,98 @@
+:root {
+  color-scheme: dark;
+  --panel: rgba(12, 14, 20, 0.72);
+  --line: rgba(255, 255, 255, 0.14);
+  --text: #f2f4f8;
+  --muted: #98a0b3;
+  --accent: #7bd3ff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+  background: #05060a;
+  color: var(--text);
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+#viewport {
+  position: fixed;
+  inset: 0;
+}
+
+#hud {
+  position: fixed;
+  top: 18px;
+  left: 18px;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--panel);
+  backdrop-filter: blur(10px);
+  pointer-events: none;
+  max-width: min(420px, calc(100vw - 36px));
+}
+
+#hud .title {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+#status {
+  margin-top: 6px;
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--muted);
+}
+
+#picker {
+  position: fixed;
+  top: 18px;
+  right: 18px;
+  padding: 9px 14px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--panel);
+  backdrop-filter: blur(10px);
+  font-size: 13px;
+  cursor: pointer;
+  user-select: none;
+}
+
+#picker:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+#picker input {
+  display: none;
+}
+
+#drop {
+  position: fixed;
+  inset: 24px;
+  display: none;
+  place-items: center;
+  border: 2px dashed var(--line);
+  border-radius: 18px;
+  background: rgba(5, 6, 10, 0.82);
+  font-size: 16px;
+  letter-spacing: 0.01em;
+  color: var(--muted);
+  pointer-events: none;
+  text-align: center;
+  padding: 24px;
+}
+
+#drop.visible {
+  display: grid;
+}
